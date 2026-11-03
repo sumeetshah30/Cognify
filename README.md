@@ -2,15 +2,115 @@
 
 
 
-Cognify is an AI-powered data intelligence platform that helps users upload documents and datasets, ask questions about their content, explore data, generate insights, and automate analysis through an AI agent.
+<p align="center">
+
+&#x20; <strong>Turn documents and datasets into actionable insights with AI.</strong>
+
+</p>
 
 
 
-The project combines a modern Angular frontend with a Python FastAPI backend, SQL Server, and Claude AI.
+<p align="center">
+
+&#x20; An AI-powered data intelligence platform built with Angular, FastAPI, SQL Server and Anthropic Claude.
+
+</p>
 
 
 
-> \*\*Project status:\*\* Actively developed personal portfolio project. Features and architecture may evolve as development continues. This repository is intended to showcase development work, technical decisions, and ongoing learning.
+<p align="center">
+
+&#x20; <img src="https://img.shields.io/badge/Angular-22-DD0031?logo=angular\&logoColor=white" alt="Angular 22" />
+
+&#x20; <img src="https://img.shields.io/badge/Python-3.14-3776AB?logo=python\&logoColor=white" alt="Python 3.14" />
+
+&#x20; <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi\&logoColor=white" alt="FastAPI" />
+
+&#x20; <img src="https://img.shields.io/badge/SQL\_Server-Database-CC2927?logo=microsoftsqlserver\&logoColor=white" alt="SQL Server" />
+
+&#x20; <img src="https://img.shields.io/badge/AI-Claude-D97757" alt="Claude AI" />
+
+</p>
+
+
+
+\---
+
+
+
+\## Overview
+
+
+
+Cognify is an AI-powered data intelligence platform that helps users work with documents and structured datasets in one place.
+
+
+
+Users can upload documents, ask natural-language questions, explore datasets, generate visual insights, compare documents, create AI reports, and automate analysis through an AI agent.
+
+
+
+The project combines a modern Angular frontend with a Python FastAPI backend, Microsoft SQL Server, and Anthropic Claude.
+
+
+
+\*\*Project status:\*\* Actively developed personal portfolio project. Features and architecture may evolve as development continues. This repository showcases development work, technical decisions, and ongoing learning.
+
+
+
+\## Application Screenshots
+
+
+
+\### Library Dashboard
+
+!\[Cognify Library Dashboard](screenshots/library-dashboard.png)
+
+
+
+\### Ask AI
+
+!\[Cognify Ask AI](screenshots/ask-ai.png)
+
+
+
+\### Data Analytics
+
+!\[Cognify Data Analytics](screenshots/data.png)
+
+
+
+\### Additional Data View
+
+!\[Cognify Data View](screenshots/data-2.png)
+
+
+
+\### Document Comparison
+
+!\[Cognify Document Comparison](screenshots/compare-documents.png)
+
+
+
+\### AI Agent
+
+!\[Cognify AI Agent](screenshots/agent.png)
+
+
+
+\### AI Reports
+
+!\[Cognify Reports](screenshots/reports.png)
+
+
+
+\### Dark Theme
+
+!\[Cognify Dark Theme](screenshots/dark-theme.png)
+
+
+
+\---
 
 
 
@@ -94,15 +194,15 @@ The project combines a modern Angular frontend with a Python FastAPI backend, SQ
 
 | AI | Anthropic Claude |
 
-| Data processing | Python data-processing libraries |
+| Data Processing | Python data-processing libraries |
 
-| Frontend visualization | Chart.js |
+| Data Visualization | Chart.js |
 
 | Authentication | JWT |
 
-| Live updates | Server-Sent Events |
+| Live Updates | Server-Sent Events |
 
-| API documentation | Swagger / OpenAPI |
+| API Documentation | Swagger / OpenAPI |
 
 
 
@@ -110,51 +210,57 @@ The project combines a modern Angular frontend with a Python FastAPI backend, SQ
 
 
 
-```text
+```mermaid
 
-&#x20;                Cognify
+flowchart TD
 
-&#x20;                   |
+&#x20;   U\[User] --> FE\[Angular 22 Frontend]
 
-&#x20;         Angular 22 Frontend
 
-&#x20;                   |
 
-&#x20;             REST API
+&#x20;   FE -->|HTTP / REST API| API\[FastAPI Backend]
 
-&#x20;                   |
 
-&#x20;            FastAPI Backend
 
-&#x20;                   |
+&#x20;   API --> AUTH\[Authentication]
 
-&#x20;      +------------+-------------+
+&#x20;   API --> DOC\[Document Intelligence]
 
-&#x20;      |            |             |
+&#x20;   API --> DATA\[Data Analytics]
 
-&#x20;  Authentication  AI Services  Data Processing
+&#x20;   API --> AGENT\[AI Agent]
 
-&#x20;      |            |             |
+&#x20;   API --> REPORT\[AI Reports]
 
-&#x20;      |          Claude       Analytics
 
-&#x20;      |            |             |
 
-&#x20;      +------------+-------------+
+&#x20;   DOC --> AI\[Anthropic Claude]
 
-&#x20;                   |
+&#x20;   AGENT --> AI
 
-&#x20;             SQL Server
+&#x20;   REPORT --> AI
 
-&#x20;                   |
 
-&#x20;          Document Storage
+
+&#x20;   DOC --> DB\[(Microsoft SQL Server)]
+
+&#x20;   DATA --> DB
+
+&#x20;   AUTH --> DB
+
+&#x20;   REPORT --> DB
+
+
+
+&#x20;   API --> SSE\[Server-Sent Events]
+
+&#x20;   SSE --> FE
 
 ```
 
 
 
-The frontend communicates with the backend through REST APIs. The backend handles authentication, document processing, data analytics, AI interactions, and persistence.
+The Angular frontend communicates with the FastAPI backend through REST APIs. The backend handles authentication, document processing, analytics, AI interactions, and persistence. Server-Sent Events provide live updates to the frontend.
 
 
 
@@ -208,39 +314,31 @@ Cognify/
 
 │
 
+├── screenshots/
+
+│   ├── agent.png
+
+│   ├── ask-ai.png
+
+│   ├── compare-documents.png
+
+│   ├── dark-theme.png
+
+│   ├── data.png
+
+│   ├── data-2.png
+
+│   ├── library-dashboard.png
+
+│   └── reports.png
+
+│
+
 ├── .gitignore
 
 └── README.md
 
 ```
-
-
-
-\## Screenshots
-
-
-
-Screenshots of the application will be added here as development progresses.
-
-
-
-<!-- Suggested screenshots:
-
-\- Dashboard
-
-\- Document Library
-
-\- Ask AI
-
-\- Data Analytics
-
-\- Document Comparison
-
-\- AI Agent
-
-\- Reports
-
-\-->
 
 
 
@@ -270,7 +368,7 @@ Screenshots of the application will be added here as development progresses.
 
 ```bash
 
-git clone YOUR\_GITHUB\_REPOSITORY\_URL
+git clone https://github.com/sumeetshah30/Cognify.git
 
 cd Cognify
 
@@ -286,11 +384,17 @@ cd Cognify
 
 cd backend
 
+
+
 python -m venv .venv
 
 .venv\\Scripts\\Activate.ps1
 
+
+
 pip install -r requirements.txt
+
+
 
 Copy-Item .env.example .env
 
@@ -346,6 +450,8 @@ Open a second terminal:
 
 cd frontend
 
+
+
 npm install
 
 npm start
@@ -382,25 +488,21 @@ Create `backend/.env` using `backend/.env.example`.
 
 |---|---|
 
-| DATABASE\_URL | SQL Server database connection |
+| `DATABASE\_URL` | SQL Server database connection |
 
-| ANTHROPIC\_API\_KEY | Anthropic API key |
+| `ANTHROPIC\_API\_KEY` | Anthropic API key |
 
-| CLAUDE\_MODEL | Claude model identifier |
+| `CLAUDE\_MODEL` | Claude model identifier |
 
-| JWT\_SECRET | Secret used for JWT authentication |
+| `JWT\_SECRET` | Secret used for JWT authentication |
 
 
 
-Never commit `.env` files, API keys, passwords, or other private credentials.
+\*\*Security:\*\* Never commit `.env` files, API keys, passwords, or other private credentials.
 
 
 
 \## Roadmap
-
-
-
-Planned improvements:
 
 
 
@@ -413,8 +515,6 @@ Planned improvements:
 \- Improve error handling and application reliability.
 
 \- Add automated backend and frontend tests.
-
-\- Improve documentation and application screenshots.
 
 \- Explore additional AI-powered workflows.
 
@@ -436,11 +536,21 @@ Cognify is a personal development and portfolio project. It is not presented as 
 
 
 
-\- GitHub: \[github.com/sumeetshah30](https://github.com/sumeetshah30)
+\- GitHub: \[@sumeetshah30](https://github.com/sumeetshah30)
 
 \- Portfolio: \[sumeetshah30.github.io](https://sumeetshah30.github.io)
 
 \- LinkedIn: \[linkedin.com/in/sumeet-shah30](https://linkedin.com/in/sumeet-shah30)
 
 
+
+\---
+
+
+
+<p align="center">
+
+&#x20; Built with curiosity and a passion for AI-powered software.
+
+</p>
 
