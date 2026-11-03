@@ -1,3 +1,5 @@
+![Cognify - AI Data Intelligence Platform](assets/cognify-banner.png)
+
 \# Cognify — AI Data Intelligence Platform
 
 
